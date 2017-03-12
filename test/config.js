@@ -1,4 +1,4 @@
-const ignoredExtensions = ['.scss', '.html'];
+const ignoredExtensions = ['.scss'];
 
 ignoredExtensions.forEach((ext) => {
   require.extensions[ext] = () => null;
@@ -22,5 +22,3 @@ Object.keys(document.defaultView).forEach((property) => {
 global.navigator = {
   userAgent: 'node.js'
 };
-
-documentRef = document;
