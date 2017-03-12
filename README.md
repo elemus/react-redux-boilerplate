@@ -1,7 +1,8 @@
 React Redux ToDo Example
 ===
 
-[![Dependencies Status](https://david-dm.org/elemus/react-redux-todo-example.svg)](https://david-dm.org/elemus/react-redux-todo-example)
+[![Dependencies Status](https://travis-ci.org/elemus/react-redux-todo-example.svg)](https://travis-ci.org/elemus/react-redux-todo-example)
+[![Dependencies Status](https://david-dm.org/elemus/react-redux-todo-example.svg/dev-status.svg)](https://david-dm.org/elemus/react-redux-todo-example?type=dev)
 [![Dependencies Status](https://david-dm.org/elemus/react-redux-todo-example.svg/dev-status.svg)](https://david-dm.org/elemus/react-redux-todo-example?type=dev)
 
 ## About
