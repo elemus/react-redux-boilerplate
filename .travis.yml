@@ -6,7 +6,8 @@ node_js:
   - "stable"
 
 install:
-  - npm install -g codecov
+  - npm i
+  - npm i -g codecov
 
 script:
   - npm run lint
