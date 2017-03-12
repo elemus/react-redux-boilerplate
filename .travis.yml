@@ -7,11 +7,12 @@ node_js:
 
 install:
   - npm i
-  - npm i -g codecov
 
 script:
   - npm run lint
   - npm run coverage
 
 after_script:
-  - codecov -f coverage/Icov.info
+  - npm i -g codecov
+  - nyc report --reporter=text-lcov > coverage.lcov
+  - codecov
