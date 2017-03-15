@@ -6,7 +6,7 @@ const Todo = props => (
   <div className="mt-3 col-xs-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
     <h1>ToDo list</h1>
     <Form
-      onTaskCreate={props.onTaskCreate}
+      onTaskAdd={props.onTaskAdd}
     />
     <TaskList
       tasks={props.tasks}
@@ -22,7 +22,7 @@ Todo.propTypes = {
     description: PropTypes.string.isRequired,
     isDone: PropTypes.bool,
   })).isRequired,
-  onTaskCreate: PropTypes.func.isRequired,
+  onTaskAdd: PropTypes.func.isRequired,
   onTaskToggle: PropTypes.func.isRequired,
   onTaskDelete: PropTypes.func.isRequired,
 };

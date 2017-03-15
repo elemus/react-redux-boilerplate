@@ -9,13 +9,13 @@ class ToDo extends Component {
   constructor(props) {
     super(props);
 
-    this.handleTaskCreate = this.handleTaskCreate.bind(this);
+    this.handleTaskAdd = this.handleTaskAdd.bind(this);
     this.handleTaskToggle = this.handleTaskToggle.bind(this);
     this.handleTaskDelete = this.handleTaskDelete.bind(this);
   }
 
-  handleTaskCreate(task) {
-    this.props.createTask(task);
+  handleTaskAdd(task) {
+    this.props.addTask(task);
   }
 
   handleTaskToggle(id) {
@@ -30,7 +30,7 @@ class ToDo extends Component {
     return (
       <TodoComponent
         tasks={this.props.tasks}
-        onTaskCreate={this.handleTaskCreate}
+        onTaskAdd={this.handleTaskAdd}
         onTaskToggle={this.handleTaskToggle}
         onTaskDelete={this.handleTaskDelete}
       />
@@ -44,7 +44,7 @@ ToDo.propTypes = {
     description: PropTypes.string.isRequired,
     isDone: PropTypes.bool,
   })).isRequired,
-  createTask: PropTypes.func.isRequired,
+  addTask: PropTypes.func.isRequired,
   toggleTask: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired,
 };

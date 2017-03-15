@@ -1,22 +1,22 @@
-const React = require('react');
-const expect = require('chai').expect;
-const shallow = require('enzyme').shallow;
-const Form = require('../../../src/components/Todo/Form').default;
+import React from 'react';
+import { expect } from 'chai';
+import { shallow } from 'enzyme';
+import Form from '../../../src/components/Todo/Form';
 
 const setup = () => {
   const props = {
-    onTaskCreate: () => {},
+    onTaskAdd: () => {},
   };
 
   return shallow(<Form {...props} />);
 };
 
-describe('Component ToDo Form', () => {
+describe('Component | ToDo | Form', () => {
   it('renders', () => {
     const form = setup();
 
-    expect(form.find('form').length).to.equal(1);
-    expect(form.find('input').length).to.equal(1);
+    expect(form.find('form')).to.have.lengthOf(1);
+    expect(form.find('input')).to.have.lengthOf(1);
     expect(form.find('button').text()).to.equal('Add');
   });
 });

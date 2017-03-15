@@ -1,5 +1,5 @@
 import {
-  CREATE_TASK,
+  ADD_TASK,
   TOGGLE_TASK,
   DELETE_TASK,
 } from '../actions/index';
@@ -8,7 +8,7 @@ export const initialState = { tasks: [] };
 
 export default function tasks(state = initialState, action) {
   switch (action.type) {
-    case CREATE_TASK:
+    case ADD_TASK:
       return Object.assign({}, state, { tasks: [...state.tasks, action.payload] });
 
     case TOGGLE_TASK:

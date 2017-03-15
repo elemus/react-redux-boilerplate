@@ -21,7 +21,7 @@ class Form extends Component {
     const description = this.state.description.trim();
     const isDone = false;
 
-    this.props.onTaskCreate({ id, description, isDone });
+    this.props.onTaskAdd({ id, description, isDone });
     this.setState({ description: '' });
   }
 
@@ -49,7 +49,7 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  onTaskCreate: PropTypes.func.isRequired,
+  onTaskAdd: PropTypes.func.isRequired,
 };
 
 export default Form;
