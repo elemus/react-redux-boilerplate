@@ -4,9 +4,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import Form from '../../../src/components/Todo/Form';
 
-const setup = (props = { onTaskAdd() {}}) => {
-  return shallow(<Form {...props} />);
-};
+const setup = (props = { onTaskAdd() {} }) => shallow(<Form {...props} />);
 
 describe('Component | ToDo | Form', () => {
   it('renders', () => {

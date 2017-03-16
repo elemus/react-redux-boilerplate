@@ -9,9 +9,7 @@ const setup = (props = {
   isDone: false,
   onToggle() {},
   onDelete() {},
-}) => {
-  return shallow(<Task {...props} />);
-};
+}) => shallow(<Task {...props} />);
 
 describe('Component | ToDo | TaskList', () => {
   it('renders', () => {

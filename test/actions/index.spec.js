@@ -6,7 +6,7 @@ describe('Actions | Tasks', () => {
     const payload = { description: 'Test' };
     const expectedAction = {
       type: actions.ADD_TASK,
-      payload
+      payload,
     };
 
     expect(actions.addTask(payload)).to.eql(expectedAction);
