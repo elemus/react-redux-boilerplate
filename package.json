@@ -25,7 +25,7 @@
     "coverage": "nyc --all npm test",
     "lint": "eslint src && sass-lint src/styles/**/*.scss -v -q",
     "start": "webpack-dev-server --config ./webpack/config.dev.js --hot",
-    "test": "mocha --opts ./mocha.opts **/*.spec.js"
+    "test": "mocha --opts ./mocha.opts --recursive"
   },
   "nyc": {
     "reporter": [
