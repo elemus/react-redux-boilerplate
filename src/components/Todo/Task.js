@@ -7,7 +7,7 @@ const Task = ({ id, description, isDone, onToggle, onDelete }) => (
 
     <div className="ml-auto">
       <button
-        type="button"
+        id="Toggle"
         onClick={() => onToggle(id)}
         className={classNames('btn btn-secondary btn-sm', {
           'btn-success': !isDone,
@@ -16,7 +16,7 @@ const Task = ({ id, description, isDone, onToggle, onDelete }) => (
         {!isDone ? 'Done' : 'Todo'}
       </button>
       <button
-        type="button"
+        id="Delete"
         onClick={() => onDelete(id)}
         className="btn btn-secondary btn-sm btn-danger ml-1"
       >
