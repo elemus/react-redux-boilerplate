@@ -3,16 +3,30 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import TaskList from '../../../src/components/Todo/TaskList';
 
-const setup = (props = {
-  tasks: [],
-  onTaskToggle() {},
-  onTaskDelete() {},
-}) => shallow(<TaskList {...props} />);
+const setup = props => shallow(<TaskList {...props} />);
 
 describe('Component | ToDo | TaskList', () => {
   it('renders', () => {
-    const wrapper = setup();
+    const tasks = [
+      {
+        id: 1,
+        description: 'test 1',
+        isDone: false,
+      },
+      {
+        id: 2,
+        description: 'test 2',
+        isDone: true,
+      },
+    ];
 
-    expect(wrapper.find('ul').length).to.equal(1);
+    const wrapper = setup({
+      tasks,
+      onTaskToggle() {},
+      onTaskDelete() {},
+    });
+
+    expect(wrapper.find('ul')).to.have.lengthOf(1);
+    expect(wrapper.find('ul').children()).to.have.lengthOf(tasks.length);
   });
 });
