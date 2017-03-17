@@ -2,7 +2,6 @@ import { expect } from 'chai';
 import * as actions from '../../src/actions';
 import reducer from '../../src/reducers';
 
-
 describe('Reducer | Tasks', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).to.eql({ tasks: [] });
