@@ -17,11 +17,8 @@ class Form extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const id = Date.now();
-    const description = this.state.description.trim();
-    const isDone = false;
+    this.props.onTaskAdd(this.state.description.trim());
 
-    this.props.onTaskAdd({ id, description, isDone });
     this.setState({ description: '' });
   }
 

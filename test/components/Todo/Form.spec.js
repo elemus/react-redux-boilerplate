@@ -27,10 +27,13 @@ describe('Component | ToDo | Form', () => {
   it('should call onTaskAdd() on form submit', () => {
     const onTaskAdd = sinon.spy();
     const wrapper = setup({ onTaskAdd });
+    const description = 'test task';
 
+    wrapper.find('input').simulate('input', { target: { value: description } });
     wrapper.find('form').simulate('submit', { preventDefault() {} });
 
     expect(onTaskAdd.calledOnce).to.equal(true);
+    expect(onTaskAdd.calledWith(description)).to.equal(true);
     expect(wrapper.state().description).to.equal('');
   });
 });

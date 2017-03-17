@@ -3,13 +3,13 @@ import * as actions from '../../src/actions';
 
 describe('Actions | Tasks', () => {
   it('should create an add action', () => {
-    const payload = { description: 'Test' };
+    const description = 'Test';
     const expectedAction = {
       type: actions.ADD_TASK,
-      payload,
+      description,
     };
 
-    expect(actions.addTask(payload)).to.eql(expectedAction);
+    expect(actions.addTask(description)).to.eql(expectedAction);
   });
 
   it('should create a toggle action', () => {

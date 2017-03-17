@@ -8,15 +8,19 @@ describe('Reducer | Tasks', () => {
   });
 
   it('should add task when addTask() action invoked', () => {
-    const newTask = {
-      description: 'Test task',
-    };
+    const description = 'Test task';
 
-    const action = actions.addTask(newTask);
+    const action = actions.addTask(description);
 
     const nextState = reducer({ tasks: [] }, action);
 
-    expect(nextState.tasks).to.eql([ newTask ]);
+    expect(nextState.tasks).to.eql([
+      {
+        id: 1,
+        description,
+        isDone: false,
+      }
+    ]);
   });
 
   it('should toggle status of the task when toggleTask() action invoked', () => {
