@@ -8,18 +8,29 @@ describe('Reducer | Tasks', () => {
   });
 
   it('should add task when addTask() action invoked', () => {
+    const initialState = {
+      tasks: [
+        {
+          id: 1,
+          description: 'test',
+          isDone: false,
+        },
+      ]
+    };
+
     const description = 'Test task';
 
     const action = actions.addTask(description);
 
-    const nextState = reducer({ tasks: [] }, action);
+    const nextState = reducer(initialState, action);
 
     expect(nextState.tasks).to.eql([
+      ...initialState.tasks,
       {
-        id: 1,
+        id: 2,
         description,
         isDone: false,
-      }
+      },
     ]);
   });
 
