@@ -22,7 +22,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -p --config ./webpack/config.prod.js --progress --profile --colors --bail",
     "clean": "rimraf dist coverage",
-    "coverage": "nyc --all npm test",
+    "coverage": "nyc npm test",
     "lint": "eslint src && sass-lint src/styles/**/*.scss -v -q",
     "start": "webpack-dev-server --config ./webpack/config.dev.js --hot",
     "test": "mocha --opts ./mocha.opts --recursive"
@@ -38,6 +38,7 @@
     "require": [
       "babel-register"
     ],
+    "check-coverage": true,
     "cache": true
   },
   "dependencies": {
