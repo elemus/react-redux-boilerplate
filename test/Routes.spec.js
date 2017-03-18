@@ -6,8 +6,8 @@ import { shallow } from 'enzyme';
 import Routes from '../src/Routes';
 import Todo from '../src/containers/ToDo';
 
-describe('Configure Store', () => {
-  it('renders correct routes', () => {
+describe('Routes', () => {
+  it('renders correct containers for each route', () => {
     const wrapper = shallow(<Routes history={browserHistory}/>);
 
     const pathMap = wrapper.find(Route).reduce((routesMap, route) => {
