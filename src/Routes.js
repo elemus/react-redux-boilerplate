@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Router, Route } from 'react-router';
 
-import Todo from './containers/ToDo';
+import Todo from './containers/Todo';
 
 const Routes = ({ history }) => (
   <Router history={history}>

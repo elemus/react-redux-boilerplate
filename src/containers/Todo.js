@@ -5,7 +5,7 @@ import * as actions from '../actions';
 
 import TodoComponent from '../components/Todo';
 
-class ToDo extends Component {
+export class TodoContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -38,11 +38,11 @@ class ToDo extends Component {
   }
 }
 
-ToDo.propTypes = {
+TodoContainer.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
-    isDone: PropTypes.bool,
+    isDone: PropTypes.bool.isRequired,
   })).isRequired,
   addTask: PropTypes.func.isRequired,
   toggleTask: PropTypes.func.isRequired,
@@ -50,13 +50,11 @@ ToDo.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return {
-    tasks: state.tasks,
-  };
+  return state;
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(actions, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToDo);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoContainer);

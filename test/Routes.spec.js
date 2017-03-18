@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Routes from '../src/Routes';
-import Todo from '../src/containers/ToDo';
+import Todo from '../src/containers/Todo';
 
 describe('Routes', () => {
   it('renders correct containers for each route', () => {

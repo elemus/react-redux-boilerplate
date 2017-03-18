@@ -1,11 +1,12 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import Task from '../../../src/components/Todo/Task';
 import TaskList from '../../../src/components/Todo/TaskList';
 
 const setup = props => shallow(<TaskList {...props} />);
 
-describe('Component | ToDo | TaskList', () => {
+describe('Component | TodoConnected | TaskList', () => {
   it('renders', () => {
     const tasks = [
       {
@@ -27,6 +28,6 @@ describe('Component | ToDo | TaskList', () => {
     });
 
     expect(wrapper.find('ul')).to.have.lengthOf(1);
-    expect(wrapper.find('ul').children()).to.have.lengthOf(tasks.length);
+    expect(wrapper.find(Task)).to.have.lengthOf(tasks.length);
   });
 });
