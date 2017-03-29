@@ -24,7 +24,7 @@ TaskList.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
-    isDone: PropTypes.false,
+    isDone: PropTypes.bool.isRequired,
   })).isRequired,
   onTaskToggle: PropTypes.func.isRequired,
   onTaskDelete: PropTypes.func.isRequired,

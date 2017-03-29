@@ -20,7 +20,7 @@ Todo.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
-    isDone: PropTypes.bool,
+    isDone: PropTypes.bool.isRequired,
   })).isRequired,
   onTaskAdd: PropTypes.func.isRequired,
   onTaskToggle: PropTypes.func.isRequired,
