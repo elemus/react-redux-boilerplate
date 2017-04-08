@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Router, Route } from 'react-router';
 
 import Todo from './containers/Todo';
