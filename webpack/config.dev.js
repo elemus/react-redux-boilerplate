@@ -26,11 +26,11 @@ module.exports = webpackMerge(baseConfig, {
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
-        loader: { loader: 'url-loader', options: { limit: 100000 } },
+        use: { loader: 'url-loader', options: { limit: 100000 } },
       },
       {
         test: /\.(jpe?g|png|gif|webp)$/,
-        loader: { loader: 'url-loader', options: { limit: 100000 } },
+        use: { loader: 'url-loader', options: { limit: 100000 } },
       },
     ]
   },

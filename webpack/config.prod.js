@@ -21,25 +21,25 @@ module.exports = webpackMerge(baseConfig, {
     rules: [
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: ['css-loader', 'postcss-loader', 'sass-loader'],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'postcss-loader', 'sass-loader'],
         }),
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: ['css-loader', 'postcss-loader'],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'postcss-loader'],
         }),
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
-        loader: { loader: 'file-loader', options: { name: 'fonts/[name].[hash:8].[ext]' } },
+        use: { loader: 'file-loader', options: { name: 'fonts/[name].[hash:8].[ext]' } },
       },
       {
         test: /\.(jpe?g|png|gif)$/,
-        loader: { loader: 'file-loader', options: { name: 'img/[path][name].[hash:8].[ext]' } },
+        use: { loader: 'file-loader', options: { name: 'img/[path][name].[hash:8].[ext]' } },
       },
     ],
   },
