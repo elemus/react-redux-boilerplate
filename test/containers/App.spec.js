@@ -1,10 +1,16 @@
 import React from 'react';
+import { createStore } from 'redux';
 import { browserHistory } from 'react-router';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import rootReducer from '../../src/reducers';
 import Routes from '../../src/Routes';
-import configureStore from '../../src/store/configureStore';
 import App from '../../src/containers/App';
+
+const configureStore = initialState => createStore(
+  rootReducer,
+  initialState,
+);
 
 describe('Container | App', () => {
   it('renders Routes component', () => {

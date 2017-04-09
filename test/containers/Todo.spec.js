@@ -1,10 +1,16 @@
 import React from 'react';
+import { createStore } from 'redux';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
-import configureStore from '../../src/store/configureStore';
+import rootReducer from '../../src/reducers';
 import TodoComponent from '../../src/components/Todo';
 import TodoConnected, { TodoContainer } from '../../src/containers/Todo';
+
+const configureStore = initialState => createStore(
+  rootReducer,
+  initialState,
+);
 
 const setup = (props) => {
   const defaultProps = {
