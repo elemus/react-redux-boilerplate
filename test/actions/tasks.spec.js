@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import * as actions from '../../src/actions';
+import * as actions from '../../src/actions/tasks';
 
 describe('Actions | Tasks', () => {
   it('should create an add action', () => {

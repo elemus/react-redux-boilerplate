@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import * as actions from '../../src/actions';
-import reducer from '../../src/reducers';
+import * as actions from '../../src/actions/tasks';
+import reducer from '../../src/reducers/tasks';
 
 describe('Reducer | Tasks', () => {
   it('should return the initial state', () => {

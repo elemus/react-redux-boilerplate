@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../actions/tasks';
 
 import TodoComponent from '../components/Todo';
 
@@ -50,8 +50,8 @@ TodoContainer.propTypes = {
   deleteTask: PropTypes.func.isRequired,
 };
 
-function mapStateToProps(state) {
-  return state;
+function mapStateToProps({ tasks }) {
+  return tasks;
 }
 
 function mapDispatchToProps(dispatch) {

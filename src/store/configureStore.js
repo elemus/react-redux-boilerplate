@@ -20,7 +20,7 @@ const configureStoreDev = (initialState) => {
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
-      const nextReducer = require('../reducers').default; // eslint-disable-line
+      const nextReducer = require('../reducers/tasks').default; // eslint-disable-line
       store.replaceReducer(nextReducer);
     });
   }
