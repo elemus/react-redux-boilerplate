@@ -6,18 +6,20 @@ import { shallow } from 'enzyme';
 import Routes from '../src/Routes';
 import Todo from '../src/containers/Todo';
 
+const pathMap = () => {
+  const wrapper = shallow(<Routes history={createBrowserHistory()}/>);
+
+  return wrapper.find(Route).reduce((routesMap, route) => {
+    const routeProps = route.props();
+
+    routesMap[routeProps.path] = routeProps.component;
+
+    return routesMap;
+  }, {});
+};
+
 describe('Routes', () => {
-  it('renders correct containers for each route', () => {
-    const wrapper = shallow(<Routes history={createBrowserHistory()}/>);
-
-    const pathMap = wrapper.find(Route).reduce((routesMap, route) => {
-      const routeProps = route.props();
-
-      routesMap[routeProps.path] = routeProps.component;
-
-      return routesMap;
-    }, {});
-
-    expect(pathMap['/']).to.equal(Todo);
+  it('should render Todo container for "/" route', () => {
+    expect(pathMap()['/']).to.equal(Todo);
   });
 });
