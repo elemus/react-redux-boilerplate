@@ -23,7 +23,7 @@ const setup = (props) => {
   return shallow(<TodoContainer {...Object.assign({}, defaultProps, props)} />);
 };
 
-describe('Container | TodoConnected', () => {
+describe('Container | Todo', () => {
   it('renders', () => {
     const props = {
       store: configureStore()

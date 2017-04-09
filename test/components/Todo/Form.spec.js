@@ -6,7 +6,7 @@ import Form from '../../../src/components/Todo/Form';
 
 const setup = (props = { onTaskAdd() {} }) => shallow(<Form {...props} />);
 
-describe('Component | TodoConnected | Form', () => {
+describe('Component | Todo | Form', () => {
   it('renders', () => {
     const wrapper = setup();
 

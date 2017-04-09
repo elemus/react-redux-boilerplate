@@ -6,7 +6,7 @@ import TaskList from '../../../src/components/Todo/TaskList';
 
 const setup = props => shallow(<TaskList {...props} />);
 
-describe('Component | TodoConnected | TaskList', () => {
+describe('Component | Todo | TaskList', () => {
   it('renders', () => {
     const tasks = [
       {

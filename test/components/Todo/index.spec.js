@@ -10,7 +10,7 @@ const setup = (props = {
   onTaskDelete() {},
 }) => shallow(<ToDo {...props} />);
 
-describe('Component | TodoConnected', () => {
+describe('Component | Todo', () => {
   it('renders', () => {
     const wrapper = setup();
 

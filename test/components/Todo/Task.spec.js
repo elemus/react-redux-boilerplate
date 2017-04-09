@@ -16,7 +16,7 @@ const setup = (props) => {
   return shallow(<Task {...Object.assign({}, defaultProps, props)} />);
 };
 
-describe('Component | TodoConnected | Task', () => {
+describe('Component | Todo | Task', () => {
   it('renders', () => {
     const description = 'test';
     const wrapper = setup({ description });
