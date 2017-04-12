@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStore } from 'redux';
-import { browserHistory } from 'react-router';
+import { createBrowserHistory } from 'history';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import rootReducer from '../../src/reducers';
@@ -14,7 +14,7 @@ const configureStore = initialState => createStore(
 
 describe('Container | App', () => {
   it('renders Routes component', () => {
-    const wrapper = shallow(<App history={browserHistory} store={configureStore()}/>);
+    const wrapper = shallow(<App history={createBrowserHistory()} store={configureStore()}/>);
 
     expect(wrapper.find(Routes)).to.have.lengthOf(1);
   });
