@@ -2,13 +2,12 @@ React Redux ToDo Example
 ===
 
 [![Build Status](https://travis-ci.org/elemus/react-redux-todo-example.svg)](https://travis-ci.org/elemus/react-redux-todo-example)
-[![dependencies Status](https://david-dm.org/elemus/react-redux-todo-example/status.svg)](https://david-dm.org/elemus/react-redux-todo-example)
-[![devDependencies Status](https://david-dm.org/elemus/react-redux-todo-example/dev-status.svg)](https://david-dm.org/elemus/react-redux-todo-example?type=dev)
+[![Dependency Status](https://gemnasium.com/badges/github.com/elemus/react-redux-todo-example.svg)](https://gemnasium.com/github.com/elemus/react-redux-todo-example)
 [![codecov](https://codecov.io/gh/elemus/react-redux-todo-example/branch/master/graph/badge.svg)](https://codecov.io/gh/elemus/react-redux-todo-example)
 
 ## About
 
-Simple and clear front-end boilerplate with ToDo list application example.
+Simple and clear ToDo list application example, which can be used as a boilerplate for future projects.
 
 ## Technologies stack
 
