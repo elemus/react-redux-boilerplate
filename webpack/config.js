@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const outputPath = path.resolve(__dirname, '../dist/');
-const jsBundleName = '[name].min.js';
+const jsBundleName = '[name].[hash:8].min.js';
 
 const babelLoaderOptions = {
   babelrc: false,
@@ -43,7 +43,8 @@ module.exports = {
     modules: [path.resolve(__dirname, '../src'), 'node_modules']
   },
   entry: {
-    vendor: ['babel-polyfill', 'react', 'react-dom', 'react-redux', 'redux', 'react-router'],
+    vendor: ['babel-polyfill', 'react', 'react-dom', 'prop-types', 'react-redux', 'react-router', 'redux',
+      'redux-thunk', 'redux-logger', 'classnames', 'history'],
   },
   output: {
     path: outputPath,

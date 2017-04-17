@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const baseConfig = require('./config');
 
-const cssBundleName = '[name].min.css';
+const cssBundleName = '[name].[hash:8].min.css';
 
 /**
  * Production config
