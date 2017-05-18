@@ -22,15 +22,15 @@ describe('Component | Todo | Task', () => {
     const wrapper = setup({ description });
 
     expect(wrapper.find('li').length).to.equal(1);
-    expect(wrapper.find('li > span').text()).to.equal(description);
+    expect(wrapper.find('.js-description').text()).to.equal(description);
   });
 
   it('should show text in del tag if task is done', () => {
     const description = 'test';
     const wrapper = setup({ description, isDone: true });
 
-    expect(wrapper.find('li > span > del').length).to.equal(1);
-    expect(wrapper.find('li > span > del').text()).to.equal(description);
+    expect(wrapper.find('.js-description > del').length).to.equal(1);
+    expect(wrapper.find('.js-description > del').text()).to.equal(description);
   });
 
   it('should call onToggle() when Done button clicked', () => {
@@ -38,7 +38,7 @@ describe('Component | Todo | Task', () => {
     const onToggle = sinon.spy();
     const wrapper = setup({ id, onToggle });
 
-    wrapper.find('#Toggle').simulate('click');
+    wrapper.find(`.js-toggle`).simulate('click');
 
     expect(onToggle.calledOnce).to.equal(true);
     expect(onToggle.calledWith(id)).to.equal(true);
@@ -49,7 +49,7 @@ describe('Component | Todo | Task', () => {
     const onDelete = sinon.spy();
     const wrapper = setup({ id, onDelete });
 
-    wrapper.find('#Delete').simulate('click');
+    wrapper.find('.js-delete').simulate('click');
 
     expect(onDelete.calledOnce).to.equal(true);
     expect(onDelete.calledWith(id)).to.equal(true);

@@ -3,27 +3,25 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Task = ({ id, description, isDone, onToggle, onDelete }) => (
-  <li className={classNames('list-group-item', { 'bg-faded': isDone })} >
-    <span>{!isDone ? description : <del>{description}</del>}</span>
-
-    <div className="ml-auto">
-      <button
-        id="Toggle"
+  <li className={classNames('list-group-item justify-content-between flex-nowrap', { 'bg-faded': isDone })}>
+    <label className="custom-control custom-checkbox" htmlFor={`Toggle${id}`}>
+      <input
+        type="checkbox"
+        id={`Toggle${id}`}
+        className="js-toggle custom-control-input"
         onClick={() => onToggle(id)}
-        className={classNames('btn btn-secondary btn-sm', {
-          'btn-success': !isDone,
-        })}
-      >
-        {!isDone ? 'Done' : 'Todo'}
-      </button>
-      <button
-        id="Delete"
-        onClick={() => onDelete(id)}
-        className="btn btn-secondary btn-sm btn-danger ml-1"
-      >
-        Delete
-      </button>
-    </div>
+      />
+      <span className="custom-control-indicator" />
+      <span className="js-description custom-control-description">
+        {!isDone ? description : <del>{description}</del>}
+      </span>
+    </label>
+    <button
+      onClick={() => onDelete(id)}
+      className="js-delete btn btn-secondary btn-sm btn-danger"
+    >
+      X
+    </button>
   </li>
 );
 
