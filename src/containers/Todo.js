@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../actions/tasks';
+import { addTask, toggleTask, deleteTask } from '../actions/tasks';
 
 import TodoComponent from '../components/Todo';
 
@@ -55,7 +55,7 @@ function mapStateToProps({ tasks }) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actions, dispatch);
+  return bindActionCreators({ addTask, toggleTask, deleteTask }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoContainer);

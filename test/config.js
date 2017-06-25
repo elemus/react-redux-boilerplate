@@ -14,3 +14,4 @@ global.document = jsdom.window.document;
 global.navigator = {
   userAgent: 'node.js'
 };
+global.HTMLElement = jsdom.window.HTMLElement;
