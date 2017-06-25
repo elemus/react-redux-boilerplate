@@ -8,6 +8,7 @@ node_js:
 script:
   - npm run lint
   - npm run coverage
+  - npm run build
 
 after_script:
   - npm i -g codecov
