@@ -23,8 +23,8 @@ export default function tasks(state = initialState, action) {
     case TOGGLE_TASK:
       return Object.assign({}, state, {
         tasks: state.tasks.map(task => (
-          task.id !== action.id ? task : Object.assign({}, task, { isDone: !task.isDone })),
-        ),
+          task.id !== action.id ? task : Object.assign({}, task, { isDone: !task.isDone })
+        )),
       });
 
     case DELETE_TASK:
