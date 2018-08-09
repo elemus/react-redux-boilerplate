@@ -2,7 +2,7 @@ React Redux Boilerplate
 ===
 
 [![Build Status](https://travis-ci.org/elemus/react-redux-boilerplate.svg)](https://travis-ci.org/elemus/react-redux-boilerplate)
-[![Dependency Status](https://gemnasium.com/badges/github.com/elemus/react-redux-boilerplate.svg)](https://gemnasium.com/github.com/elemus/react-redux-boilerplate)
+[![Dependency Status](https://david-dm.org/elemus/react-redux-boilerplate.svg)](https://david-dm.org/elemus/react-redux-boilerplate)
 [![codecov](https://codecov.io/gh/elemus/react-redux-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/elemus/react-redux-boilerplate)
 
 ## About
@@ -30,7 +30,7 @@ Simple and clear React+Redux frontend boilerplate with ToDo application example.
     - [Enzyme](http://airbnb.io/enzyme/index.html) - Testing utility for React
     - [nyc](https://github.com/istanbuljs/nyc) - Generating coverage reports
 * Bundling:
-    - [Webpack 2](http://webpack.github.io)
+    - [Webpack](https://webpack.github.io/)
 * Developing:
     - [Webpack Dev Server](http://webpack.github.io) - Development server
     - [React Hot Loader](https://github.com/gaearon/react-hot-loader) - Provides live reloading feature
