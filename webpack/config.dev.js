@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 
 const baseConfig = require('./config');
@@ -19,10 +18,7 @@ module.exports = webpackMerge(baseConfig, {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: 'style-loader',
-            options: { sourceMap: true }
-          },
+          'style-loader',
           {
             loader: 'css-loader',
             options: { sourceMap: true }

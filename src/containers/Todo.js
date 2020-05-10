@@ -16,21 +16,25 @@ export class TodoContainer extends Component {
   }
 
   handleTaskAdd(task) {
-    this.props.addTask(task);
+    const { addTaskAction } = this.props;
+    addTaskAction(task);
   }
 
   handleTaskToggle(id) {
-    this.props.toggleTask(id);
+    const { toggleTaskAction } = this.props;
+    toggleTaskAction(id);
   }
 
   handleTaskDelete(id) {
-    this.props.deleteTask(id);
+    const { deleteTaskAction } = this.props;
+    deleteTaskAction(id);
   }
 
   render() {
+    const { tasks } = this.props;
     return (
       <TodoComponent
-        tasks={this.props.tasks}
+        tasks={tasks}
         onTaskAdd={this.handleTaskAdd}
         onTaskToggle={this.handleTaskToggle}
         onTaskDelete={this.handleTaskDelete}
@@ -45,9 +49,9 @@ TodoContainer.propTypes = {
     description: PropTypes.string.isRequired,
     isDone: PropTypes.bool.isRequired,
   })).isRequired,
-  addTask: PropTypes.func.isRequired,
-  toggleTask: PropTypes.func.isRequired,
-  deleteTask: PropTypes.func.isRequired,
+  addTaskAction: PropTypes.func.isRequired,
+  toggleTaskAction: PropTypes.func.isRequired,
+  deleteTaskAction: PropTypes.func.isRequired,
 };
 
 function mapStateToProps({ tasks }) {
@@ -55,7 +59,11 @@ function mapStateToProps({ tasks }) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addTask, toggleTask, deleteTask }, dispatch);
+  return bindActionCreators({
+    addTaskAction: addTask,
+    toggleTaskAction: toggleTask,
+    deleteTaskAction: deleteTask,
+  }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoContainer);

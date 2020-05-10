@@ -15,9 +15,9 @@ const configureStore = initialState => createStore(
 const setup = (props) => {
   const defaultProps = {
     tasks: [],
-    addTask() {},
-    toggleTask() {},
-    deleteTask() {},
+    addTaskAction() {},
+    toggleTaskAction() {},
+    deleteTaskAction() {},
   };
 
   return shallow(<TodoContainer {...Object.assign({}, defaultProps, props)} />);
@@ -35,41 +35,41 @@ describe('Container | Todo', () => {
   });
 
   it('should trigger addTask() prop func when handleTaskAdd() invoked', () => {
-    const addTask = sinon.spy();
+    const addTaskAction = sinon.spy();
 
-    const wrapper = setup({ addTask });
+    const wrapper = setup({ addTaskAction });
 
     const description = 'New task';
 
     wrapper.instance().handleTaskAdd(description);
 
-    expect(addTask.calledOnce).to.equal(true);
-    expect(addTask.calledWith(description)).to.equal(true);
+    expect(addTaskAction.calledOnce).to.equal(true);
+    expect(addTaskAction.calledWith(description)).to.equal(true);
   });
 
   it('should trigger toggleTask() prop func when handleTaskToggle() invoked', () => {
-    const toggleTask = sinon.spy();
+    const toggleTaskAction = sinon.spy();
 
-    const wrapper = setup({ toggleTask });
+    const wrapper = setup({ toggleTaskAction });
 
     const id = 1;
 
     wrapper.instance().handleTaskToggle(id);
 
-    expect(toggleTask.calledOnce).to.equal(true);
-    expect(toggleTask.calledWith(id)).to.equal(true);
+    expect(toggleTaskAction.calledOnce).to.equal(true);
+    expect(toggleTaskAction.calledWith(id)).to.equal(true);
   });
 
   it('should trigger deleteTask() prop func when handleTaskDelete() invoked', () => {
-    const deleteTask = sinon.spy();
+    const deleteTaskAction = sinon.spy();
 
-    const wrapper = setup({ deleteTask });
+    const wrapper = setup({ deleteTaskAction });
 
     const id = 2;
 
     wrapper.instance().handleTaskDelete(id);
 
-    expect(deleteTask.calledOnce).to.equal(true);
-    expect(deleteTask.calledWith(id)).to.equal(true);
+    expect(deleteTaskAction.calledOnce).to.equal(true);
+    expect(deleteTaskAction.calledWith(id)).to.equal(true);
   });
 });

@@ -1,2 +1,0 @@
---require ./test/config.js
---reporter spec

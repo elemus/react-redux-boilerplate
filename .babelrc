@@ -1,18 +1,18 @@
 {
   "presets": [
-    ["env", { "modules": false }],
-    "react"
+    ["@babel/preset-env", { "modules": false }],
+    "@babel/preset-react"
   ],
   "plugins": [
-    "transform-object-assign",
-    "transform-runtime"
+    "@babel/transform-object-assign",
+    "@babel/plugin-transform-runtime"
   ],
   "env": {
     "production": {
       "plugins": [
         "transform-react-remove-prop-types",
-        "transform-react-inline-elements",
-        "transform-react-constant-elements"
+        "@babel/plugin-transform-react-inline-elements",
+        "@babel/plugin-transform-react-constant-elements"
       ]
     },
     "development": {
@@ -22,7 +22,7 @@
     },
     "test": {
       "presets": [
-        ["env"]
+        ["@babel/preset-env"]
       ]
     }
   }

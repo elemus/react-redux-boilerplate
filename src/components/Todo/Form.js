@@ -7,23 +7,27 @@ class Form extends Component {
 
     this.state = { description: '' };
 
-    this.onInput = this.onInput.bind(this);
+    this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onInput(e) {
+  onChange(e) {
     this.setState({ description: e.target.value });
   }
 
   onSubmit(e) {
     e.preventDefault();
 
-    this.props.onTaskAdd(this.state.description.trim());
+    const { onTaskAdd } = this.props;
+    const { description } = this.state;
+
+    onTaskAdd(description.trim());
 
     this.setState({ description: '' });
   }
 
   render() {
+    const { description } = this.state;
     return (
       <form onSubmit={this.onSubmit}>
         <div className="row">
@@ -32,8 +36,8 @@ class Form extends Component {
               type="text"
               className="form-control"
               placeholder="Do something..."
-              value={this.state.description}
-              onInput={this.onInput}
+              value={description}
+              onChange={this.onChange}
               required
             />
           </div>

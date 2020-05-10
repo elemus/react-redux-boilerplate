@@ -4,7 +4,7 @@ import { createLogger } from 'redux-logger';
 
 import rootReducer from '../reducers';
 
-const configureStoreProd = initialState => createStore(
+const configureStoreProd = (initialState) => createStore(
   rootReducer,
   initialState,
   compose(applyMiddleware(thunk)),

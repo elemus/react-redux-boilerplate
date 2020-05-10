@@ -19,7 +19,7 @@ describe('Component | Todo | Form', () => {
     const wrapper = setup();
     const description = 'test task';
 
-    wrapper.find('input').simulate('input', { target: { value: description } });
+    wrapper.find('input').simulate('change', { target: { value: description } });
 
     expect(wrapper.state().description).to.equal(description);
   });
@@ -29,7 +29,7 @@ describe('Component | Todo | Form', () => {
     const wrapper = setup({ onTaskAdd });
     const description = 'test task';
 
-    wrapper.find('input').simulate('input', { target: { value: description } });
+    wrapper.find('input').simulate('change', { target: { value: description } });
     wrapper.find('form').simulate('submit', { preventDefault() {} });
 
     expect(onTaskAdd.calledOnce).to.equal(true);

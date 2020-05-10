@@ -1,5 +1,5 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const outputPath = path.resolve(__dirname, './../dist/');
@@ -11,10 +11,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: [path.resolve(__dirname, '../src'), 'node_modules']
-  },
-  entry: {
-    vendor: ['babel-polyfill', 'react', 'react-dom', 'prop-types', 'react-redux', 'react-router', 'redux',
-      'redux-thunk', 'redux-logger', 'classnames', 'history'],
   },
   output: {
     path: outputPath,
@@ -32,9 +28,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['dist'], {
-      root: path.resolve(__dirname, '../'),
-    }),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),

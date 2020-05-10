@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Task from './Task';
 
 const TaskList = ({ tasks, onTaskToggle, onTaskDelete }) => {
-  const taskNodes = tasks.map(task => (
+  const taskNodes = tasks.map(({ id, description, isDone }) => (
     <Task
-      key={task.id}
-      id={task.id}
-      description={task.description}
-      isDone={task.isDone}
+      key={id}
+      id={id}
+      description={description}
+      isDone={isDone}
       onToggle={onTaskToggle}
       onDelete={onTaskDelete}
     />
