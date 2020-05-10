@@ -4,24 +4,28 @@ import classNames from 'classnames';
 
 const Task = props => (
   <li className={classNames('list-group-item justify-content-between flex-nowrap', { 'bg-faded': props.isDone })}>
-    <label className="custom-control custom-checkbox" htmlFor={`Toggle${props.id}`}>
-      <input
-        type="checkbox"
-        id={`Toggle${props.id}`}
-        className="js-toggle custom-control-input"
-        onClick={() => props.onToggle(props.id)}
-      />
-      <span className="custom-control-indicator" />
-      <span className="js-description custom-control-description">
-        {!props.isDone ? props.description : <del>{props.description}</del>}
-      </span>
-    </label>
-    <button
-      onClick={() => props.onDelete(props.id)}
-      className="js-delete btn btn-secondary btn-sm btn-danger"
-    >
-      X
-    </button>
+    <form className="form-inline">
+      <div className="d-flex w-100">
+        <div className="custom-control custom-checkbox my-1 mr-sm-2">
+          <input
+            type="checkbox"
+            id={`Toggle${props.id}`}
+            className="custom-control-input"
+            onClick={() => props.onToggle(props.id)}
+          />
+          <label className="custom-control-label" htmlFor={`Toggle${props.id}`}>{!props.isDone ? props.description : <del>{props.description}</del>}</label>
+        </div>
+        <div className="ml-auto">
+          <button
+            type="submit"
+            className="js-delete btn btn-secondary btn-sm btn-danger"
+            onClick={() => props.onDelete(props.id)}
+          >
+            X
+          </button>
+        </div>
+      </div>
+    </form>
   </li>
 );
 

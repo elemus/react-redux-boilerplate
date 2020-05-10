@@ -1,9 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const outputPath = path.resolve(__dirname, '../dist/');
-const jsBundleName = '[name].[hash:8].min.js';
+const outputPath = path.resolve(__dirname, './../dist/');
 
 /**
  * General webpack settings
@@ -19,7 +18,7 @@ module.exports = {
   },
   output: {
     path: outputPath,
-    filename: jsBundleName,
+    filename: '[name].[hash].js',
     publicPath: '/',
   },
   module: {
@@ -33,9 +32,11 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(['dist'], {
+      root: path.resolve(__dirname, '../'),
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: jsBundleName }),
   ],
 };

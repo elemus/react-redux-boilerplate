@@ -7,7 +7,8 @@ const baseConfig = require('./config');
  * Development config
  */
 module.exports = webpackMerge(baseConfig, {
-  devtool: 'eval-source-map',
+  mode: 'development',
+  devtool: 'inline-source-map',
 
   entry: {
     app: ['react-hot-loader/patch', 'index'],
@@ -49,12 +50,5 @@ module.exports = webpackMerge(baseConfig, {
         use: { loader: 'url-loader', options: { limit: 100000 } },
       },
     ]
-  },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      debug: true
-    }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-  ],
+  }
 });
