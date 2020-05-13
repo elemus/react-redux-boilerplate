@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { Router, Route } from 'react-router';
+import { Provider } from 'react-redux';
 
-import Todo from './containers/Todo';
+export const Todo = lazy(() => import('./containers/Todo'));
 
-const Routes = ({ history }) => (
-  <Router history={history}>
-    <Route path="/" component={Todo} />
-  </Router>
+const Routes = ({ store, history }) => (
+  <Provider store={store}>
+    <Router history={history}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Route path="/" component={Todo} />
+      </Suspense>
+    </Router>
+  </Provider>
 );
 
 Routes.propTypes = {
+  store: PropTypes.object.isRequired, // eslint-disable-line
   history: PropTypes.object.isRequired, // eslint-disable-line
 };
 

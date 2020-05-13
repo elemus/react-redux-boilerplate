@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
-import Task from './Task';
+
+export const Task = lazy(() => import('./Task'));
 
 const TaskList = ({ tasks, onTaskToggle, onTaskDelete }) => {
   const taskNodes = tasks.map(({ id, description, isDone }) => (
-    <Task
-      key={id}
-      id={id}
-      description={description}
-      isDone={isDone}
-      onToggle={onTaskToggle}
-      onDelete={onTaskDelete}
-    />
+    <Suspense key={id} fallback={<div>Loading...</div>}>
+      <Task
+        key={id}
+        id={id}
+        description={description}
+        isDone={isDone}
+        onToggle={onTaskToggle}
+        onDelete={onTaskDelete}
+      />
+    </Suspense>
   ));
 
   return (

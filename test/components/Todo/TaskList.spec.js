@@ -1,10 +1,9 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Task from '../../../src/components/Todo/Task';
-import TaskList from '../../../src/components/Todo/TaskList';
+import TaskList, { Task } from '../../../src/components/Todo/TaskList';
 
-const setup = props => shallow(<TaskList {...props} />);
+const setup = props => shallow(<TaskList {...props} />, { suspenseFallback: false });
 
 describe('Component | Todo | TaskList', () => {
   it('renders', () => {

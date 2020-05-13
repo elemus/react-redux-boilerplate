@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { createBrowserHistory } from 'history';
 import configureStore from './store/configureStore';
 import { AppContainer } from 'react-hot-loader'; // eslint-disable-line
-import App from './containers/App';
+import Routes from './Routes';
 
-import './styles/app.scss';
+import('./styles/app.scss'); // eslint-disable-line
 
 const store = configureStore();
 const rootEl = document.getElementById('root');
@@ -20,8 +20,8 @@ const render = (Component) => {
   );
 };
 
-render(App);
+render(Routes);
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => render(App));
+  module.hot.accept('./containers/App', () => render(Routes));
 }
