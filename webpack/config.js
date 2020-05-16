@@ -2,8 +2,6 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const outputPath = path.resolve(__dirname, './../dist/');
-
 /**
  * General webpack settings
  */
@@ -13,10 +11,10 @@ module.exports = {
     modules: [path.resolve(__dirname, '../src'), 'node_modules']
   },
   output: {
-    path: outputPath,
+    path: path.resolve(__dirname, './../dist/'),
     filename: '[name].[hash].js',
     chunkFilename: '[name].[hash].chunk.js',
-    publicPath: './',
+    publicPath: '/',
   },
   module: {
     rules: [

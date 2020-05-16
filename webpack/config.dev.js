@@ -8,11 +8,14 @@ const baseConfig = require('./config');
 module.exports = webpackMerge(baseConfig, {
   mode: 'development',
   devtool: 'inline-source-map',
-
   entry: {
     app: ['react-hot-loader/patch', 'index'],
   },
-
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
+  },
   module: {
     rules: [
       {

@@ -1,31 +1,15 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { createLogger } from 'redux-logger';
-
 import rootReducer from '../reducers';
 
-const configureStoreProd = (initialState) => createStore(
-  rootReducer,
-  initialState,
-  compose(applyMiddleware(thunk)),
-);
+const middleWares = [
+  thunk,
+];
 
-const configureStoreDev = (initialState) => {
-  const store = createStore(
-    rootReducer,
-    initialState,
-    compose(applyMiddleware(thunk, createLogger())),
-  );
+if (process.env.NODE_ENV !== 'production') {
+  const { logger } = require('redux-logger'); // eslint-disable-line
 
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers', () => {
-      const nextReducer = require('../reducers/tasks').default; // eslint-disable-line
-      store.replaceReducer(nextReducer);
-    });
-  }
+  middleWares.push(logger);
+}
 
-  return store;
-};
-
-export default (process.env.NODE_ENV === 'production') ? configureStoreProd : configureStoreDev;
+export default compose(applyMiddleware(...middleWares))(createStore)(rootReducer);

@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { Router, Route } from 'react-router';
 import { Provider } from 'react-redux';
+import { hot } from 'react-hot-loader/root';
 
 export const Todo = lazy(() => import('./containers/Todo'));
 
@@ -20,4 +21,4 @@ Routes.propTypes = {
   history: PropTypes.object.isRequired, // eslint-disable-line
 };
 
-export default Routes;
+export default hot(Routes);
