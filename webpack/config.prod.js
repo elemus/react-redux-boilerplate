@@ -46,6 +46,17 @@ module.exports = webpackMerge(commonConfig, {
   optimization: {
     splitChunks: {
       chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 10240,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            const packageName = module.identifier().match(/[\\/]node_modules[\\/](.+?)([\\/]|$)/)[1];
+            return `vendor.${packageName.replace('@', '')}`;
+          },
+        },
+      },
     },
   },
   plugins: [
