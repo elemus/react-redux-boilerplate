@@ -1,12 +1,12 @@
 const webpack = require('webpack');
-const webpackMerge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const commonConfig = require('./config');
 
 /**
  * Production config
  */
-module.exports = webpackMerge(commonConfig, {
+module.exports = merge(commonConfig, {
   mode: 'production',
   cache: false,
 
