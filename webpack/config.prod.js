@@ -8,7 +8,6 @@ const commonConfig = require('./config');
  */
 module.exports = merge(commonConfig, {
   mode: 'production',
-  cache: false,
 
   entry: {
     app: 'index',
