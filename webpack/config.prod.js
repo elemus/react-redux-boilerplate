@@ -34,11 +34,11 @@ module.exports = merge(commonConfig, {
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
-        use: { loader: 'file-loader', options: { name: 'fonts/[name].[hash].[ext]' } },
+        use: { loader: 'file-loader', options: { name: 'fonts/[name].[fullhash].[ext]' } },
       },
       {
         test: /\.(jpe?g|png|gif)$/,
-        use: { loader: 'file-loader', options: { name: 'img/[path][name].[hash].[ext]' } },
+        use: { loader: 'file-loader', options: { name: 'img/[path][name].[fullhash].[ext]' } },
       },
     ],
   },
@@ -64,6 +64,6 @@ module.exports = merge(commonConfig, {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
-    new MiniCssExtractPlugin({ filename: '[name].[hash].min.css' }),
+    new MiniCssExtractPlugin({ filename: '[name].[fullhash].min.css' }),
   ],
 });
