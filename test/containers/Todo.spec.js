@@ -1,16 +1,9 @@
 import React from 'react';
-import { createStore } from 'redux';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
-import rootReducer from '../../src/reducers';
 import TodoComponent from '../../src/components/Todo';
-import TodoConnected, { TodoContainer } from '../../src/containers/Todo';
-
-const configureStore = initialState => createStore(
-  rootReducer,
-  initialState,
-);
+import { TodoContainer } from '../../src/containers/Todo';
 
 const setup = (props) => {
   const defaultProps = {
@@ -25,11 +18,7 @@ const setup = (props) => {
 
 describe('Container | Todo', () => {
   it('renders', () => {
-    const props = {
-      store: configureStore()
-    };
-
-    const wrapper = mount(<TodoConnected {...props}/>);
+    const wrapper = setup();
 
     expect(wrapper.find(TodoComponent)).to.have.lengthOf(1);
   });
