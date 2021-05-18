@@ -22,6 +22,7 @@ Simple and clear React+Redux frontend boilerplate with ToDo application example.
     - [PostCSS](https://github.com/postcss/postcss) with [Autoprefixer](https://github.com/postcss/autoprefixer)
 * Code-style checking:
     - [ESLint](http://eslint.org) with [Airbnb](https://github.com/airbnb/javascript) code style guide
+    - [stylelint](https://stylelint.io/)
 * Testing:
     - [Mocha](https://mochajs.org/) - Test framework
     - [Chai](http://chaijs.com/) - Assertion library
